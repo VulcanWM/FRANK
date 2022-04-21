@@ -1,0 +1,168 @@
+<head>
+<title> All Threads </title>
+<link rel="icon" href="static/FRANKlogo.png" type="image/png">
+</head>
+<body>
+<div class="topnav">
+  <a href="/">Home</a>
+  <div class="dropdown">
+    <button class="dropbtn">FRANK Account&#8595; 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href='/signup'>Signup for a FRANK account</a>
+      <a href="/changedesc">Change your descripion</a>
+      <a href="/changepass">Change your password</a>
+      <a href="/deleteaccount">Delete your account</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Fmail&#8595; 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="/login">Check inbox</a>
+      <a href="/sendmail">Send mail</a>
+      <a href="/deletemail">Delete mail</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Fmedia&#8595; 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="/makethread">Make thread</a>
+      <a href="/allthreads">See all threads</a>
+      <a href="/deletethread">Delete thread</a>
+      <a href="/likethread">Like thread</a>
+      <a href="/unlikethread">Unlike thread</a>
+    </div>
+  </div>
+</div>
+
+<style>
+/* Set global font */
+* {
+  font-family: Roboto, sans-serif;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #222244;
+  border-radius: 15px;
+  box-shadow: 5px 10px 500px black;
+  /*background-color: #0000FF;*/
+  overflow: hidden;
+  transition: 0.2s;
+}
+
+.topnav:hover {
+  background-color: #111122;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  /*background-color: #00008B;*/
+  background-color: #483D8B;
+  color: white;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px; 
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+.navbar a:hover, .dropdown:hover .dropbtn {
+  color: white;
+  background-color: #483D8B;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+{% if somelist == "NO" %}
+<h2> There are no threads! </h2>
+{% else %}
+{% for dict in somelist %}
+
+<button onclick='location = "{{dict["Url"]}}"'>{{ dict['Title'] }}<br>By {{dict['Author']}}</button>
+{% endfor %}
+{% endif %}
+<style>
+button {
+  background-color: #0066ff;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #005ce6;
+}
+</style>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-177820778-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-177820778-1');
+</script>
+</body>
