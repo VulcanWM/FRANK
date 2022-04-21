@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width">
     <title>Send mail - FRANK </title>
     <link rel="icon" href="static/FRANKlogo.png" type="image/png">
+    <script src="/script.js"></script>
+    <link href="/style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
 <div class="topnav">
@@ -44,99 +46,6 @@
   </div>
 </div>
 
-<style>
-/* Set global font */
-* {
-  font-family: Roboto, sans-serif;
-}
-
-/* Add a black background color to the top navigation */
-.topnav {
-  background-color: #222244;
-  border-radius: 15px;
-  box-shadow: 5px 10px 500px black;
-  /*background-color: #0000FF;*/
-  overflow: hidden;
-  transition: 0.2s;
-}
-
-.topnav:hover {
-  background-color: #111122;
-}
-
-/* Style the links inside the navigation bar */
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-/* Change the color of links on hover */
-.topnav a:hover {
-  /*background-color: #00008B;*/
-  background-color: #483D8B;
-  color: white;
-}
-
-/* Add a color to the active/current link */
-.topnav a.active {
-  background-color: #4CAF50;
-  color: white;
-}
-.dropdown {
-  float: left;
-  overflow: hidden;
-}
-
-/* Dropdown button */
-.dropdown .dropbtn {
-  font-size: 16px; 
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit; /* Important for vertical align on mobile phones */
-  margin: 0; /* Important for vertical align on mobile phones */
-}
-.navbar a:hover, .dropdown:hover .dropbtn {
-  color: white;
-  background-color: #483D8B;
-}
-
-/* Dropdown content (hidden by default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-/* Add a grey background color to dropdown links on hover */
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-</style>
     <form action="{{ url_for('sendmail') }}" method="POST">
       <h1>Send mail</h1>
       <div class="container">
@@ -148,7 +57,7 @@
         <input type="text" placeholder="Enter Recipent username and tag" name="sendto" required>
         <label for="title"><b>Title</b></label>
         <input type="text" placeholder="Enter Title" name="title" required>
-        <p><strong>Body<strong></p>
+        <p><strong>Body</strong></p>
         <textarea placeholder="Enter Body" name="body" required>Body</textarea>
         <button type="submit">Send mail</button>
         
@@ -160,98 +69,5 @@
 
   </body>
 </html>
-<style>
-.error {
-  text-align: center;
-  color: red;
-}
-/* Full-width inputs */
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
-
-/* Set a style for all buttons */
-button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-}
-
-/* Add a hover effect for buttons */
-button:hover {
-  opacity: 0.8;
-}
-
-/* Extra style for the cancel button (red) */
-.cancelbtn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: #f44336;
-}
-
-/* Center the avatar image inside this container */
-.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
-}
-
-/* Avatar image */
-img.avatar {
-  width: 40%;
-  border-radius: 50%;
-}
-
-
-
-/* The "Forgot password" text */
-span.psw {
-  float: right;
-  padding-top: 16px;
-}
-
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-  span.psw {
-    display: block;
-    float: none;
-  }
-  .cancelbtn {
-    width: 100%;
-  }
-
-
-/* The "Forgot password" text */
-span.psw {
-  float: right;
-  padding-top: 16px;
-}
-
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-  span.psw {
-    display: block;
-    float: none;
-  }
-  .cancelbtn {
-    width: 100%;
-  }
-}
-</style>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-177820778-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-177820778-1');
-</script>

@@ -1370,11 +1370,14 @@ def links(link):
   return render_template("404.html")
 
 
-@app.route("/discord")
-def discord():
-  return redirect("https://discord.gg/tvgn4zF")
-
-
 @app.route('/favicon-ico')
 def logo():
   return send_file('static/FRANKlogo.png')
+
+@app.route("/style.css")
+def stylecss():
+  return send_file("static/style.css")
+
+@app.route("/script.js")
+def scriptjs():
+  return send_file("static/script.js")

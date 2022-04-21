@@ -1,4 +1,9 @@
+<html>
+<body>
 <title>FRANK - Inbox</title>
+<link rel="icon" href="static/FRANKlogo.png" type="image/png">
+<script src="/script.js"></script>
+<link href="/style.css" rel="stylesheet" type="text/css" />
 <div class="topnav">
   <a href="/">Home</a>
   <div class="dropdown">
@@ -36,123 +41,7 @@
   </div>
 </div>
 
-<style>
-/* Set global font */
-* {
-  font-family: Roboto, sans-serif;
-}
-
-/* Add a black background color to the top navigation */
-.topnav {
-  background-color: #222244;
-  border-radius: 15px;
-  box-shadow: 5px 10px 500px black;
-  /*background-color: #0000FF;*/
-  overflow: hidden;
-  transition: 0.2s;
-}
-
-.topnav:hover {
-  background-color: #111122;
-}
-
-/* Style the links inside the navigation bar */
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-/* Change the color of links on hover */
-.topnav a:hover {
-  /*background-color: #00008B;*/
-  background-color: #483D8B;
-  color: white;
-}
-
-/* Add a color to the active/current link */
-.topnav a.active {
-  background-color: #4CAF50;
-  color: white;
-}
-.dropdown {
-  float: left;
-  overflow: hidden;
-}
-
-/* Dropdown button */
-.dropdown .dropbtn {
-  font-size: 16px; 
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit; /* Important for vertical align on mobile phones */
-  margin: 0; /* Important for vertical align on mobile phones */
-}
-.navbar a:hover, .dropdown:hover .dropbtn {
-  color: white;
-  background-color: #483D8B;
-}
-
-/* Dropdown content (hidden by default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-/* Add a grey background color to dropdown links on hover */
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-</style>
-<h3><strong> {{ text }} </strong></h3>
-<h1>Inbox</h1>
-<h2> User: {{ userandtag }} </h2>
-{% if value == "NOEMAIL" %}
-  <h1>You have no fmails!</h1>
-{% else %}
-  {% for list in value %}
-    <div><h3>{{ list['Title'] }} </h3> <p>Email id: {{ list['_id'] }}</p> <p>{{ list['Body'] }} </p> <p>By {{ list['From'] }}</p></div>
-  {% endfor %}
-{% endif %}
-<link rel="icon" href="static/FRANKlogo.png" type="image/png">
-<style>
-  body {
-    text-align: center;
-    font-family: 'Lato', sans-serif;
-    background-color: #4682b4;
-  }
-</style>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-177820778-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-177820778-1');
-</script>
+</body>
+</html>
