@@ -355,7 +355,7 @@ def makethread():
         "Voteslist": []
     }]
     mycol.insert_many(document)
-    url = "https://frank.vulcanwm.com/threads/" + randomid
+    url = "https://FRANK.vulcanwm.repl.co/threads/" + randomid
     print(url)
     log = username + " made a thread!"
     db = mongoclient["Logs"]
@@ -419,7 +419,7 @@ def allthreads():
       "Votes": 1
   }).sort("Votes", -1):
     theid = doc["_id"]
-    url = "https://frank.vulcanwm.com/threads/" + str(theid)
+    url = "https://FRANK.vulcanwm.repl.co/threads/" + str(theid)
     del doc['_id']
     doc['Url'] = url
     author = doc['Author']
@@ -551,7 +551,7 @@ def changedescmain():
         "statusdiscordusername": statusdiscordusername
     }]
     MYCOL.insert_many(document)
-    return redirect("https://frank.vulcanwm.com/users/" + username)
+    return redirect("https://FRANK.vulcanwm.repl.co/users/" + username)
 
 
 @app.route("/changepass")
@@ -1027,7 +1027,7 @@ def likethread():
               }]
               mycol.insert_many(document)
               print("Added the new user profile")
-              url = "https://frank.vulcanwm.com/threads/" + str(
+              url = "https://FRANK.vulcanwm.repl.co/threads/" + str(
                   threadid)
               return redirect(url)
             else:
@@ -1179,7 +1179,7 @@ def unlikethread():
               }]
               mycol.insert_many(document)
               print("Added the new user profile")
-              url = "https://frank.vulcanwm.com/threads/" + str(
+              url = "https://FRANK.vulcanwm.repl.co/threads/" + str(
                   threadid)
               return redirect(url)
             else:
@@ -1351,7 +1351,7 @@ def addlink():
         "code": link
     }]
     mycol.insert_many(document)
-    reallink = "https://frank.vulcanwm.com/links/" + link
+    reallink = "https://FRANK.vulcanwm.repl.co/links/" + link
     return render_template(
         "main.html",
         text="The link has been made! Go to " + reallink +
